@@ -5,6 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProcessLister"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
-    <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="True" HorizontalAlignment="Stretch" />
+        Title="Invocations" Height="450" Width="800" Loaded="Window_Loaded">
+    <DataGrid ItemsSource="{Binding}" AutoGenerateColumns="True" HorizontalAlignment="Stretch">
+        <DataGrid.Resources>
+            <Style TargetType="DataGridRow">
+                <EventSetter Event="MouseDoubleClick" Handler="ShowInvocationOutputs" />
+            </Style>
+        </DataGrid.Resources>
+    </DataGrid>
 </Window>
